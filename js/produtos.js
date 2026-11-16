@@ -54,7 +54,8 @@ const CATEGORIAS = [
   { id: "lencois-de-cama-queen", depto: "cama", nome: "Lençóis de cama Queen", foto: "fotos/ambiente/jogos-de-cama.jpg",
     descricao: "Para cama Queen: 19 estampas em malha 100% algodão e com barra de renda." },
   { id: "lencois-elastico-king", depto: "cama", tamanho: "King", nome: "Lençóis de elástico King",
-    descricao: "Lençol com elástico para cama King." },
+    foto: "fotos/lencol-king/modelo-01.jpg",
+    descricao: "8 modelos de lençóis com elástico para cama King, nas medidas 1,93 x 2,30 x 0,30 m." },
   { id: "lencois", depto: "cama", nome: "Lençóis", foto: "fotos/ambiente/lencois.jpg",
     descricao: "Lençol 100% algodão em 30 cores, estampados com fronha e conjunto para solteiro." },
   { id: "coberdrom", depto: "cama", nome: "Coberdrom de sherpa", foto: "fotos/ambiente/coberdrom-de-sherpa.jpg",
@@ -323,7 +324,36 @@ const LENCOIS_CASAL = COLECAO_CASAL.opcoes.map((o) => ({
   precos: { Casal: COLECAO_CASAL.preco },
 }));
 
+
+/* LENÇÓIS DE ELÁSTICO KING — uma estampa por produto. */
+const COLECAO_KING = {
+  id: "lencol-king",
+  preco: 150.0,
+  medidas: { largura: 1.93, comprimento: 2.30, altura: 0.30 },
+  opcoes: Array.from({ length: 8 }, (_, i) => {
+    const numero = String(i + 1).padStart(2, "0");
+    return { numero, nome: `Modelo ${numero}` };
+  }),
+};
+
+const LENCOIS_KING = COLECAO_KING.opcoes.map((o) => ({
+  id: `lencol-king-modelo-${o.numero}`,
+  nome: `Lençol de elástico King ${o.nome}`,
+  detalhe: `${o.nome}, para cama King`,
+  descricao: "Lençol com elástico para cama King, para colchão de 1,93 x 2,30 m e até 0,30 m de altura.",
+  categoria: "lencois-elastico-king",
+  colecao: COLECAO_KING.id,
+  variante: o.nome,
+  rotulo: "Modelo",
+  foto: `fotos/lencol-king/modelo-${o.numero}.jpg`,
+  medidas: COLECAO_KING.medidas,
+  medidasTitulo: "Medidas para cama King",
+  tamanhos: ["King"],
+  precos: { King: COLECAO_KING.preco },
+}));
+
 const PRODUTOS = [
+  ...LENCOIS_KING,
   ...LENCOIS_CASAL,
   ...JOGOS_QUEEN_RENDA,
   ...LENCOIS_SOLTEIRO,
