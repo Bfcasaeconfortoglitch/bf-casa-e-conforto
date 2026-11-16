@@ -46,15 +46,15 @@ const DEPARTAMENTOS = [
    o bloco mostra o desenho da cama e "Em breve". */
 const CATEGORIAS = [
   { id: "lencois-elastico-solteiro", depto: "cama", tamanho: "Solteiro", nome: "Lençóis de elástico Solteiro",
-    foto: "fotos/ambiente/lencois-de-solteiro.jpg",
+    foto: "fotos/ambiente/cama-solteiro-arrumada.jpg",
     descricao: "42 opções para cama de solteiro: personagens, bichinhos, florais e cores lisas." },
   { id: "lencois-elastico-casal", depto: "cama", tamanho: "Casal", nome: "Lençóis de elástico Casal",
-    foto: "fotos/lencol-casal/modelo-01.jpg",
+    foto: "fotos/ambiente/cama-casal-arrumada.jpg",
     descricao: "60 modelos de lençóis com elástico para cama de casal, nas medidas 1,38 x 1,90 x 0,30 m." },
   { id: "lencois-de-cama-queen", depto: "cama", nome: "Lençóis de cama Queen", foto: "fotos/ambiente/jogos-de-cama.jpg",
     descricao: "Para cama Queen: 19 estampas em malha 100% algodão e com barra de renda." },
   { id: "lencois-elastico-king", depto: "cama", tamanho: "King", nome: "Lençóis de elástico King",
-    foto: "fotos/lencol-king/modelo-01.jpg",
+    foto: "fotos/ambiente/cama-king-arrumada.jpg",
     descricao: "8 modelos de lençóis com elástico para cama King, nas medidas 1,93 x 2,30 x 0,30 m." },
   { id: "lencois", depto: "cama", nome: "Lençóis", foto: "fotos/ambiente/lencois.jpg",
     descricao: "Lençol 100% algodão em 30 cores, estampados com fronha e conjunto para solteiro." },
