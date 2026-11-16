@@ -49,7 +49,8 @@ const CATEGORIAS = [
     foto: "fotos/ambiente/lencois-de-solteiro.jpg",
     descricao: "42 opções para cama de solteiro: personagens, bichinhos, florais e cores lisas." },
   { id: "lencois-elastico-casal", depto: "cama", tamanho: "Casal", nome: "Lençóis de elástico Casal",
-    descricao: "Lençol com elástico para cama de casal." },
+    foto: "fotos/lencol-casal/modelo-01.jpg",
+    descricao: "11 modelos de lençóis com elástico para cama de casal, nas medidas 1,38 x 1,90 x 0,30 m." },
   { id: "lencois-de-cama-queen", depto: "cama", nome: "Lençóis de cama Queen", foto: "fotos/ambiente/jogos-de-cama.jpg",
     descricao: "Para cama Queen: 19 estampas em malha 100% algodão e com barra de renda." },
   { id: "lencois-elastico-king", depto: "cama", tamanho: "King", nome: "Lençóis de elástico King",
@@ -291,7 +292,38 @@ const PASSADEIRAS = COLECAO_PASSADEIRA.estampas.map((e) => ({
   precos: COLECAO_PASSADEIRA.preco != null ? { "Único": COLECAO_PASSADEIRA.preco } : null,
 }));
 
+
+/* LENÇÓIS DE ELÁSTICO CASAL — uma estampa por produto. */
+const COLECAO_CASAL = {
+  id: "lencol-casal",
+  preco: 130.0,
+  medidas: { largura: 1.38, comprimento: 1.90, altura: 0.30 },
+  opcoes: Array.from({ length: 11 }, (_, i) => {
+    const numero = String(i + 1).padStart(2, "0");
+    return { numero, nome: `Modelo ${numero}` };
+  }),
+};
+
+const LENCOIS_CASAL = COLECAO_CASAL.opcoes.map((o) => ({
+  id: `lencol-casal-modelo-${o.numero}`,
+  nome: `Lençol de elástico Casal ${o.nome}`,
+  detalhe: `${o.nome}, para cama de casal`,
+  descricao: "Lençol com elástico para cama de casal, para colchão de 1,38 x 1,90 m e até 0,30 m de altura.",
+  categoria: "lencois-elastico-casal",
+  colecao: COLECAO_CASAL.id,
+  variante: o.nome,
+  rotulo: "Modelo",
+  foto: `fotos/lencol-casal/modelo-${o.numero}.jpg`,
+  fotosAdicionais: ["03", "04", "05"].includes(o.numero)
+    ? [`fotos/lencol-casal/modelo-${o.numero}-2.jpg`] : [],
+  medidas: COLECAO_CASAL.medidas,
+  medidasTitulo: "Medidas para cama Casal",
+  tamanhos: ["Casal"],
+  precos: { Casal: COLECAO_CASAL.preco },
+}));
+
 const PRODUTOS = [
+  ...LENCOIS_CASAL,
   ...JOGOS_QUEEN_RENDA,
   ...LENCOIS_SOLTEIRO,
   ...COBERDROMS,

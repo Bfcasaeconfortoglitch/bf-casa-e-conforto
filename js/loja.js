@@ -377,6 +377,9 @@
               <img src="${p.foto}" alt="${esc(p.nome)}${recorte || p.colecao ? "" : ": todas as opções"}">
               <span class="produto__ver">Toque para ampliar</span>
             </button>
+            ${(p.fotosAdicionais || []).map((foto) => `
+              <img src="${esc(foto)}" alt="Outra foto de ${esc(p.nome)}" loading="lazy" style="display:block;width:100%;height:auto;margin-top:16px;border-radius:8px">
+            `).join("")}
             ${recorte ? `<button type="button" class="link produto-pg__catalogo" data-ampliar-catalogo>Ver o catálogo com todas as estampas</button>` : ""}
           </div>
           <div class="produto-pg__info">
