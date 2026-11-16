@@ -63,7 +63,7 @@ const CATEGORIAS = [
   { id: "cobertores", depto: "cama", nome: "Cobertores", foto: "fotos/ambiente/cobertores.jpg",
     descricao: "Cobertor jacquard macio e quentinho para os dias frios." },
   { id: "passadeiras", depto: "cama", nome: "Passadeiras", foto: "fotos/ambiente/passadeiras.jpg",
-    descricao: "Passadeira para o lado da cama em 9 estampas: geométricas, xadrez, clássicas e florais." },
+    descricao: "Passadeiras emborrachadas para o lado da cama, em 9 estampas. Medidas: 1,80 x 0,60 m." },
   { id: "toalhas", depto: "banho", nome: "Toalhas", foto: "fotos/ambiente/toalhas.jpg",
     descricao: "Felpa macia em cores lisas, com barra listrada ou em alto relevo." },
   { id: "tapetes", depto: "banho", nome: "Tapetes", foto: "fotos/ambiente/tapetes.jpg",
@@ -261,8 +261,8 @@ const LENCOIS_SOLTEIRO = COLECAO_SOLTEIRO.opcoes.map((o) => ({
    --------------------------------------------------------- */
 const COLECAO_PASSADEIRA = {
   id: "passadeira",
-  preco: null,
-  medidas: null,
+  preco: 130.0,
+  medidas: { largura: 1.80, comprimento: 0.60 },
   estampas: [
     { nome: "Madeira com orquídeas",    arquivo: "01-madeira-com-orquideas" },
     { nome: "Vinho com treliça dourada", arquivo: "02-vinho-com-trelica-dourada" },
@@ -279,8 +279,8 @@ const COLECAO_PASSADEIRA = {
 const PASSADEIRAS = COLECAO_PASSADEIRA.estampas.map((e) => ({
   id: `passadeira-${e.arquivo}`,
   nome: `Passadeira ${e.nome}`,
-  detalhe: "Para o lado da cama",
-  descricao: "Passadeira estampada para o lado da cama: deixa o quarto mais aconchegante e o chão menos frio ao levantar.",
+  detalhe: "Emborrachada, 1,80 x 0,60 m",
+  descricao: "Passadeiras emborrachadas para o lado da cama, em diferentes estampas. Cada peça mede 1,80 x 0,60 m e deixa o quarto mais aconchegante.",
   categoria: "passadeiras",
   colecao: COLECAO_PASSADEIRA.id,
   variante: e.nome,
