@@ -56,6 +56,8 @@ const CATEGORIAS = [
   { id: "lencois-elastico-king", depto: "cama", tamanho: "King", nome: "Lençóis de elástico King",
     foto: "fotos/ambiente/cama-king-arrumada.jpg",
     descricao: "8 modelos de lençóis com elástico para cama King, nas medidas 1,93 x 2,30 x 0,30 m." },
+  { id: "mantas-infantis", depto: "cama", nome: "Mantas infantis", foto: "fotos/mantas-infantis/modelo-02.jpg",
+    descricao: "Mantas infantis que brilham no escuro. 8 modelos, por R$ 100,00 cada." },
   { id: "coberdrom", depto: "cama", nome: "Coberdrom de sherpa", foto: "fotos/ambiente/coberdrom-de-sherpa.jpg",
     descricao: "Coberdrom de sherpa para cama Queen em 8 cores: macio por fora e quentinho por dentro." },
   { id: "colchas", depto: "cama", nome: "Colchas", foto: "fotos/ambiente/colchas.jpg",
@@ -350,7 +352,33 @@ const LENCOIS_KING = COLECAO_KING.opcoes.map((o) => ({
   precos: { King: COLECAO_KING.preco },
 }));
 
+
+/* MANTAS INFANTIS QUE BRILHAM NO ESCURO */
+const COLECAO_MANTAS_INFANTIS = {
+  id: "mantas-infantis",
+  preco: 100.0,
+  opcoes: Array.from({ length: 8 }, (_, i) => {
+    const numero = String(i + 1).padStart(2, "0");
+    return { numero, nome: `Modelo ${numero}` };
+  }),
+};
+
+const MANTAS_INFANTIS = COLECAO_MANTAS_INFANTIS.opcoes.map((o) => ({
+  id: `manta-infantil-modelo-${o.numero}`,
+  nome: `Manta infantil ${o.nome}`,
+  detalhe: "Brilha no escuro",
+  descricao: "Mantas infantis que brilham no escuro.",
+  categoria: "mantas-infantis",
+  colecao: COLECAO_MANTAS_INFANTIS.id,
+  variante: o.nome,
+  rotulo: "Modelo",
+  foto: `fotos/mantas-infantis/modelo-${o.numero}.jpg`,
+  tamanhos: ["Único"],
+  precos: { "Único": COLECAO_MANTAS_INFANTIS.preco },
+}));
+
 const PRODUTOS = [
+  ...MANTAS_INFANTIS,
   ...LENCOIS_KING,
   ...LENCOIS_CASAL,
   ...JOGOS_QUEEN_RENDA,
