@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BF Casa &amp; Conforto</title>
+  <meta name="description" content="Lençóis, colchas, cobertores, toalhas e tapetes. Escolha a estampa e faça o pedido pelo WhatsApp.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%232A3990'/%3E%3Ctext x='32' y='41' font-family='Arial,sans-serif' font-weight='700' font-size='22' fill='white' text-anchor='middle'%3EBF%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <div class="avisos" role="note">
+    <p><strong>5% de desconto</strong> no PIX</p>
+    <p><strong>Frete grátis</strong> acima de R$ 299</p>
+  </div>
+
+  <header class="topo">
+    <div class="topo__linha">
+      <a class="marca" href="#/" aria-label="BF Casa &amp; Conforto, início">
+        <span class="monograma" aria-hidden="true">BF</span>
+        <span class="marca__nome">BF Casa &amp; Conforto</span>
+      </a>
+
+      <nav class="menu" aria-label="Departamentos" data-menu>
+        <a href="#/cama" data-depto="cama">Cama</a>
+        <a href="#/banho" data-depto="banho">Banho</a>
+        <a href="#/mesa" data-depto="mesa">Mesa</a>
+        <a href="#produtos">Todos os produtos</a>
+      </nav>
+
+      <button class="botao-sacola" type="button" aria-controls="sacola" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z M9 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span>Sacola</span>
+        <span class="botao-sacola__qtd" data-qtd hidden>0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+
+    <!-- PÁGINAS INTERNAS (Cama, Banho, Lençóis de cama Queen, produto...) — montadas pelo loja.js -->
+    <div class="pagina" data-vista="pagina" hidden></div>
+
+    <!-- PÁGINA INICIAL -->
+    <div data-vista="inicio">
+
+      <!-- CAPA -->
+      <section class="capa" id="inicio">
+        <div class="capa__texto">
+          <h1>Lençol macio, na estampa que é a sua cara.</h1>
+          <p class="capa__sub">Lençóis, colchas, cobertores, toalhas e tapetes. Você escolhe a estampa aqui e fecha o pedido pelo WhatsApp.</p>
+          <div class="capa__acoes">
+            <a class="botao botao--cheio" href="#/cama">Ver cama</a>
+            <a class="botao botao--linha" href="#/banho">Ver banho</a>
+          </div>
+          <ul class="capa__fatos">
+            <li><strong>100% algodão</strong> nos lençóis e na malha</li>
+            <li><strong>Mais de 100</strong> estampas e cores</li>
+            <li><strong>Troca em 7 dias</strong> se não servir</li>
+          </ul>
+        </div>
+
+        <figure class="capa__foto">
+          <img data-foto="capa" alt="Cama arrumada com lençóis e travesseiros brancos" width="1400" height="1600" fetchpriority="high">
+          <figcaption class="etiqueta">
+            <span class="etiqueta__furo" aria-hidden="true"></span>
+            <span class="etiqueta__nome">Lençol de cama Queen</span>
+            <span class="etiqueta__det">Com e sem renda</span>
+            <span class="etiqueta__preco">59 estampas</span>
+            <span class="etiqueta__pix">Peça pelo número</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- CATEGORIAS -->
+      <section class="secao categorias" aria-labelledby="t-categorias">
+        <h2 id="t-categorias" class="secao__titulo">Comprar por peça</h2>
+        <div class="categorias__lista" data-categorias></div>
+      </section>
+
+      <!-- TAMANHO DA CAMA -->
+      <section class="secao camas" id="tamanhos" aria-labelledby="t-camas">
+        <div class="camas__cabeca">
+          <h2 id="t-camas" class="secao__titulo">Qual é o tamanho da sua cama?</h2>
+          <p>Toque na sua cama para ver a medida e filtrar os produtos. As quatro estão desenhadas na mesma escala, do jeito que você veria de cima.</p>
+        </div>
+
+        <div class="camas__palco" role="group" aria-label="Escolha o tamanho da cama" data-camas></div>
+
+        <div class="camas__info" aria-live="polite" data-camas-info></div>
+      </section>
+
+      <!-- PRODUTOS -->
+      <section class="secao produtos" id="produtos" aria-labelledby="t-produtos">
+        <div class="produtos__cabeca">
+          <h2 id="t-produtos" class="secao__titulo">Todos os produtos</h2>
+          <p class="produtos__resumo" data-resumo aria-live="polite"></p>
+        </div>
+
+        <div class="filtros">
+          <div class="filtros__grupo" role="group" aria-label="Filtrar por peça" data-filtro-cat></div>
+          <div class="filtros__grupo" role="group" aria-label="Filtrar por tamanho" data-filtro-tam></div>
+        </div>
+
+        <ul class="grade" data-grade></ul>
+        <p class="grade__vazia" data-vazio hidden>Nenhuma peça nesse tamanho e categoria. <button type="button" class="link" data-limpar>Mostrar tudo</button></p>
+      </section>
+
+      <!-- COMO COMPRAR -->
+      <section class="secao passos" aria-labelledby="t-passos">
+        <h2 id="t-passos" class="secao__titulo">Como comprar</h2>
+        <ol class="passos__lista">
+          <li><strong>Abra o produto</strong> e veja todas as estampas e cores na foto.</li>
+          <li><strong>Escolha a estampa</strong> na lista e adicione à sacola.</li>
+          <li><strong>Envie o pedido pelo WhatsApp.</strong> A mensagem já vai pronta.</li>
+          <li><strong>Pague no PIX ou cartão</strong> e receba em casa.</li>
+        </ol>
+      </section>
+
+      <!-- SOBRE -->
+      <section class="secao sobre" aria-labelledby="t-sobre">
+        <img data-foto="sobre" alt="Roupa de cama branca ao lado de uma planta" width="1000" height="1200" loading="lazy">
+        <div class="sobre__texto">
+          <h2 id="t-sobre" class="secao__titulo">Sobre a BF Casa &amp; Conforto</h2>
+          <p>Aqui entra a história da loja: como começou, de onde vêm os tecidos e como cada peça é escolhida.</p>
+          <p>Me mande esse texto e uma foto sua ou da loja que eu troco por esta.</p>
+          <a class="botao botao--linha" data-insta href="#" target="_blank" rel="noopener">Ver o Instagram</a>
+        </div>
+      </section>
+
+      <!-- DÚVIDAS -->
+      <section class="secao duvidas" aria-labelledby="t-duvidas">
+        <h2 id="t-duvidas" class="secao__titulo">Dúvidas</h2>
+        <div class="duvidas__lista">
+          <details>
+            <summary>Como escolho a estampa?</summary>
+            <p>Abra o produto para ver o catálogo inteiro, com o número e o nome de cada estampa. Depois escolha na lista e adicione à sacola.</p>
+          </details>
+          <details>
+            <summary>Como sei o tamanho certo?</summary>
+            <p>Meça a largura, o comprimento e a altura do colchão e compare com o desenho das camas acima. O lençol com elástico serve em colchão de até 30 cm de altura.</p>
+          </details>
+          <details>
+            <summary>Quanto tempo demora a entrega?</summary>
+            <p>Depende da sua cidade. Informamos o prazo e o frete pelo WhatsApp antes de você pagar.</p>
+          </details>
+          <details>
+            <summary>Posso trocar?</summary>
+            <p>Sim. Você tem 7 dias depois de receber para trocar ou devolver, com a peça sem uso e na embalagem.</p>
+          </details>
+          <details>
+            <summary>Como lavar para durar mais?</summary>
+            <p>Água fria ou morna, sabão neutro e nada de alvejante com cloro. Seque à sombra e passe em temperatura média.</p>
+          </details>
+          <details>
+            <summary>Quais as formas de pagamento?</summary>
+            <p>PIX com 5% de desconto ou cartão de crédito.</p>
+          </details>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape__marca">
+      <span class="monograma monograma--grande" aria-hidden="true">BF</span>
+      <p>BF Casa &amp; Conforto<br>Cama, mesa e banho</p>
+    </div>
+    <div>
+      <h3>Atendimento</h3>
+      <ul>
+        <li><a data-whats href="#" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a data-insta href="#" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Loja</h3>
+      <ul>
+        <li><a href="#/cama">Cama</a></li>
+        <li><a href="#/banho">Banho</a></li>
+        <li><a href="#/mesa">Mesa</a></li>
+        <li><a href="#tamanhos">Guia de tamanhos</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Pagamento</h3>
+      <p>PIX e cartão de crédito</p>
+    </div>
+    <p class="rodape__legal">© <span data-ano></span> BF Casa &amp; Conforto. CNPJ <span data-cnpj></span>.</p>
+  </footer>
+
+  <a class="whats-flutuante" data-whats href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>
+  </a>
+
+  <!-- SACOLA -->
+  <div class="sacola-fundo" data-sacola-fundo hidden></div>
+  <aside class="sacola" id="sacola" aria-label="Sacola" aria-hidden="true" tabindex="-1">
+    <div class="sacola__topo">
+      <h2>Sua sacola</h2>
+      <button type="button" class="sacola__fechar" data-fechar aria-label="Fechar sacola">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
+    </div>
+    <ul class="sacola__itens" data-itens></ul>
+    <p class="sacola__vazia" data-sacola-vazia>Sua sacola está vazia. Abra um produto, escolha a estampa ou a cor e toque em “Adicionar à sacola”.</p>
+    <div class="sacola__rodape" data-sacola-rodape hidden>
+      <p class="sacola__frete" data-frete></p>
+      <dl class="sacola__totais" data-totais>
+        <div><dt>Total no cartão</dt><dd data-total></dd></div>
+        <div class="sacola__pix"><dt>Total no PIX</dt><dd data-total-pix></dd></div>
+      </dl>
+      <a class="botao botao--cheio botao--largo" data-enviar href="#" target="_blank" rel="noopener">Enviar pedido pelo WhatsApp</a>
+      <p class="sacola__nota" data-nota></p>
+    </div>
+  </aside>
+
+  <!-- FOTO AMPLIADA (catálogo inteiro do produto) -->
+  <dialog class="janela" data-janela aria-labelledby="janela-titulo">
+    <div class="janela__topo">
+      <div>
+        <h2 id="janela-titulo" data-janela-titulo></h2>
+        <p data-janela-dica></p>
+      </div>
+      <button type="button" class="sacola__fechar" data-janela-fechar aria-label="Fechar foto">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
+    </div>
+    <img data-janela-img alt="">
+  </dialog>
+
+  <div class="aviso-toast" role="status" aria-live="polite" data-toast></div>
+
+  <script src="js/produtos.js"></script>
+  <script src="js/loja.js"></script>
+</body>
+</html>
