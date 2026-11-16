@@ -50,7 +50,7 @@ const CATEGORIAS = [
     descricao: "42 opções para cama de solteiro: personagens, bichinhos, florais e cores lisas." },
   { id: "lencois-elastico-casal", depto: "cama", tamanho: "Casal", nome: "Lençóis de elástico Casal",
     foto: "fotos/lencol-casal/modelo-01.jpg",
-    descricao: "38 modelos de lençóis com elástico para cama de casal, nas medidas 1,38 x 1,90 x 0,30 m." },
+    descricao: "52 modelos de lençóis com elástico para cama de casal, nas medidas 1,38 x 1,90 x 0,30 m." },
   { id: "lencois-de-cama-queen", depto: "cama", nome: "Lençóis de cama Queen", foto: "fotos/ambiente/jogos-de-cama.jpg",
     descricao: "Para cama Queen: 19 estampas em malha 100% algodão e com barra de renda." },
   { id: "lencois-elastico-king", depto: "cama", tamanho: "King", nome: "Lençóis de elástico King",
@@ -298,7 +298,7 @@ const COLECAO_CASAL = {
   id: "lencol-casal",
   preco: 130.0,
   medidas: { largura: 1.38, comprimento: 1.90, altura: 0.30 },
-  opcoes: Array.from({ length: 38 }, (_, i) => {
+  opcoes: Array.from({ length: 52 }, (_, i) => {
     const numero = String(i + 1).padStart(2, "0");
     return { numero, nome: `Modelo ${numero}` };
   }),
