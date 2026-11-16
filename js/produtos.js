@@ -17,12 +17,12 @@
 
 const LOJA = {
   nome: "BF Casa & Conforto",
-  whatsapp: "5500000000000",        // TROCAR: 55 + DDD + número, só dígitos
-  instagram: "bfcasaeconforto",     // TROCAR: @ da loja, sem o @
+  whatsapp: "5521993758542",        // 55 + DDD + número, só dígitos: (21) 99375-8542
+  instagram: "bf_casa",             // @ da loja, sem o @
   descontoPix: 5,                   // % de desconto no PIX
   parcelasSemJuros: 0,              // 0 = não mostra parcelamento no site
   freteGratisAcima: 299,            // R$
-  cnpj: "00.000.000/0000-00",       // TROCAR
+  cnpj: "21.860.697/0001-60",
 };
 
 /* Tamanhos de colchão (cm). Confira com as medidas do seu fornecedor. */
